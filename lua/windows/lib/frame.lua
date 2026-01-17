@@ -296,7 +296,7 @@ function Frame:equalize_windows(do_width, do_height)
          for _, frame in ipairs(self.children) do
             if frame:is_fixed_height() then
                frame.new_height = frame:get_height()
-               room = room - frame.new_height - 1
+               room = room - frame.new_height
                Nw = Nw - #frame:get_longest_column()
             else
                table.insert(var_height_frames, frame)
@@ -337,7 +337,7 @@ function Frame:equalize_windows(do_width, do_height)
          for _, frame in ipairs(self.children) do
             if frame:is_fixed_width() then
                frame.new_width = frame:get_width()
-               room = room - frame.new_width - 1
+               room = room - frame.new_width
                Nw = Nw - #frame:get_longest_row()
             else
                table.insert(var_width_frames, frame)
